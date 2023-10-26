@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.git/
+.github/
+.eslintrc
+.prettierrc
+tests/
+.vscode/
+.idea/
+docs/
+CHANGELOG.md
+webpack.config.js
+rollup.config.js
+.env
+*.log
+*.tmp
+.DS_Store
