@@ -26,16 +26,7 @@ test('Verify that text-resizing worked correctly', async () => {
   ];
 
   // Call the checkTextResizing function to test text resizing
-  const errors = await textResizing.checkTextResizing(page, elements);
-
-  if (errors.length === 0) {
-    console.log('Text resizing is correct.');
-  } else {
-    console.error('Text resizing issues found:');
-    for (const error of errors) {
-      console.error(error);
-    }
-  }
+  await textResizing.checkTextResizing(page, elements);
 
   await browser.close();
 });

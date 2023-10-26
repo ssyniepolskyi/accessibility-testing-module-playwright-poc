@@ -26,16 +26,7 @@ test('Verify that skip-to-content-links worked correctly', async () => {
   ];
 
   // Call the checkSkipToContentLinks function to test "skip to content" links
-  const errors = await skipToContentLinks.checkSkipToContentLinks(page, skipToContentLinksObject);
-
-  if (errors.length === 0) {
-    console.log('"Skip to content" links are functioning correctly.');
-  } else {
-    console.error('"Skip to content" link issues found:');
-    for (const error of errors) {
-      console.error(error);
-    }
-  }
+  await skipToContentLinks.checkSkipToContentLinks(page, skipToContentLinksObject);
 
   await browser.close();
 });

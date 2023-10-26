@@ -29,16 +29,7 @@ test('Verify that text-alternatives worked correctly', async () => {
   ];
 
   //Call the checkTextAlternatives function to test text alternatives
-  const errors = await textAlternatives.checkTextAlternatives(page, elements);
-
-  if (errors.length === 0) {
-    console.log('Text alternatives are correct.');
-  } else {
-    console.error('Text alternative issues found:');
-    for (const error of errors) {
-      console.error(error);
-    }
-  }
+  await textAlternatives.checkTextAlternatives(page, elements);
 
   await browser.close();
 });

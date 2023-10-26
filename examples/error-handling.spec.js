@@ -15,14 +15,7 @@ test('Verify that error-handling worked correctly', async () => {
   await page.goto(baseUrl);
 
   // Call the checkErrorHandling function to test handling of errors
-  const errors = await errorHandling.checkErrorHandling(page, inputSelector, submitFormSelector, incorrectData, errorSelector);
-
-  if (errors.length > 0) {
-    console.log('Error-handling issues found:');
-    console.log(errors);
-  } else {
-    console.log('No error-handling issues found.');
-  }
+  await errorHandling.checkErrorHandling(page, inputSelector, submitFormSelector, incorrectData, errorSelector);
 
   await browser.close();
 });

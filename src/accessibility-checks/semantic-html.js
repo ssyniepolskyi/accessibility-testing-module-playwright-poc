@@ -1,4 +1,7 @@
 const {findElementsBySelector, getTagName} = require('../utils/dom-traversal');
+var log4js = require('log4js');
+var logger = log4js.getLogger();
+logger.level = 'error';
 
 /**
  * @description Check semantic usage of HTML tags
@@ -34,6 +37,13 @@ async function checkSemanticHTML(page) {
         errors.push(`Missing semantic ${selector} element.`);
       }
     }
+  }
+
+  if (errors.length > 0) {
+    logger.error('Semantic issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No semantic issues found');
   }
 
   return errors;

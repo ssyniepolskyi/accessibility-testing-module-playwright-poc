@@ -10,14 +10,9 @@ test('Verify that alt-text worked correctly', async () => {
   await page.goto(baseUrl);
 
   // Call the checkAltText to test alt text attribute for all images on the page
-  const errors = await altText.checkAltText(page);
-
-  if (errors.length > 0) {
-    console.log('Accessibility issues found:');
-    console.log(errors);
-  } else {
-    console.log('No accessibility issues found.');
-  }
+  await test.step('Accessibility Check', async() => {
+    await altText.checkAltText(page);
+  })
 
   await browser.close();
 });

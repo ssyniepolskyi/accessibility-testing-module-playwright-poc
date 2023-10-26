@@ -10,7 +10,6 @@ async function getTagName(element) {
 async function getComputedStyle(element) {
   const computedStyle = await element.evaluate((el) => {
     const style = window.getComputedStyle(el);
-    console.log(el.attributes);
     return {
       color: style.color,
       backgroundColor: style.backgroundColor,

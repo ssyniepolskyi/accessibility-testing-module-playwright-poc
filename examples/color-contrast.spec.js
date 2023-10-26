@@ -11,14 +11,7 @@ test('Verify that color-contrast worked correctly', async () => {
 
   // Call the checkColorContrast to test color contrast
   const minimumContrastRatio = 4.5;
-  const contrastErrors = await colorContrast.checkColorContrast(page, minimumContrastRatio);
-
-  if (contrastErrors.length === 0) {
-    console.log('Color contrast is compliant.');
-  } else {
-    console.log('Color contrast issues found:');
-    console.log(contrastErrors);
-  }
+  await colorContrast.checkColorContrast(page, minimumContrastRatio);
 
   await browser.close();
 });

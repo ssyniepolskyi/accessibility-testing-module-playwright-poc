@@ -1,3 +1,7 @@
+var log4js = require("log4js");
+var logger = log4js.getLogger();
+logger.level = "error";
+
 /**
  * @description Check alt text for elements
  * @param {page} page The page to be tested.
@@ -23,6 +27,13 @@ async function checkTextAlternatives(page, elements) {
     if (altText !== textAlternative) {
       errors.push(`Text alternative does not match for ${selector}. Expected: ${textAlternative}, Actual: ${altText}`);
     }
+  }
+
+  if (errors.length > 0) {
+    logger.error('Text alternative issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No text alternative issues found');
   }
 
   return errors;

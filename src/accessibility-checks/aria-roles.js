@@ -1,4 +1,7 @@
 const {findElementsWithAriaAttributes, getAriaRoleAttributes} = require('../utils/aria-helper');
+var log4js = require("log4js");
+var logger = log4js.getLogger();
+logger.level = "error";
 
 const semanticAriaRoles = {
   button: ['button', 'a', 'div'], //for example <a role='button'> text </a> - is correct & <label role='button'>text</a> - is incorrect
@@ -50,6 +53,13 @@ async function checkAriaRoles(page) {
         errors.push(`Non-semantic ARIA role found: ${attribute}="${value}" on ${tagName}`);
       }
     }
+  }
+
+  if (errors.length > 0) {
+    logger.error('ARIA semantic issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No ARIA semantic issues found');
   }
 
   return errors;

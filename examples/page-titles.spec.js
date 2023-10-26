@@ -26,16 +26,7 @@ test('Verify that page-titles worked correctly', async () => {
   ];
 
   // Call the checkPageTitles function to test page titles
-  const errors = await pageTitles.checkPageTitles(page, titles);
-
-  if (errors.length === 0) {
-    console.log('Page titles are correct.');
-  } else {
-    console.error('Page title issues found:');
-    for (const error of errors) {
-      console.error(error);
-    }
-  }
+  await pageTitles.checkPageTitles(page, titles);
 
   await browser.close();
 });

@@ -26,16 +26,7 @@ test('Verify that navigation-links worked correctly', async () => {
   ];
 
   // Call the checkNavigationLinks function to test navigation links
-  const errors = await navigationLinks.checkNavigationLinks(page, navigationLinksObject);
-
-  if (errors.length === 0) {
-    console.log('Navigation links are working correctly.');
-  } else {
-    console.error('Navigation link issues found:');
-    for (const error of errors) {
-      console.error(error);
-    }
-  }
+  await navigationLinks.checkNavigationLinks(page, navigationLinksObject);
 
   await browser.close();
 });

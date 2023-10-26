@@ -1,3 +1,7 @@
+var log4js = require("log4js");
+var logger = log4js.getLogger();
+logger.level = "error";
+
 const htmlValidator = require('html-validator');
 /**
  * @description Validate HTML for page
@@ -28,6 +32,13 @@ async function validateHTML(page) {
     }
   } catch (error) {
     errors.push('Error during HTML validation: ' + error.message);
+  }
+
+  if (errors.length > 0) {
+    logger.error('HTML validation issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No HTML validation issues found');
   }
 
   return errors;

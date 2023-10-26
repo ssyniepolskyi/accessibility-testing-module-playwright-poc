@@ -24,16 +24,7 @@ test('Verify that keyboard-trap worked correctly', async () => {
   ];
 
   // Call the checkKeyboardTraps function to test keyboard traps
-  const errors = await keyboardTraps.checkKeyboardTraps(page, components);
-
-  if (errors.length === 0) {
-    console.log('Keyboard traps are working correctly.');
-  } else {
-    console.error('Keyboard trap accessibility issues found:');
-    for (const error of errors) {
-      console.error(error);
-    }
-  }
+  await keyboardTraps.checkKeyboardTraps(page, components);
 
   await browser.close();
 });

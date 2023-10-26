@@ -1,4 +1,7 @@
 const {findFormElements, getFormElementLabels} = require('../utils/form-helpers');
+var log4js = require("log4js");
+var logger = log4js.getLogger();
+logger.level = "error";
 
 /**
  * @description Check that label is accessible for elements.
@@ -24,6 +27,13 @@ async function checkFormLabels(page) {
         }
       }
     }
+  }
+
+  if (errors.length > 0) {
+    logger.error('Label accessibility issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No label accessibility issues found');
   }
 
   return errors;

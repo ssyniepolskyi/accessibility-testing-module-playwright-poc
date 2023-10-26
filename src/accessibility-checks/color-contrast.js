@@ -1,4 +1,7 @@
 const {getComputedStyle} = require('../utils/dom-traversal');
+var log4js = require("log4js");
+var logger = log4js.getLogger();
+logger.level = "error";
 
 /**
  * @description Check color contrast elements on the page.
@@ -24,6 +27,13 @@ async function checkColorContrast(page, minimumContrastRatio = 4.5) {
       const elementText = await element.evaluate((el) => el.textContent);
       errors.push(`Low color contrast: ${tagName} - "${elementText}"`);
     }
+  }
+
+  if (errors.length > 0) {
+    logger.error('Low color contrast issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No color contrast issues found');
   }
 
   return errors;

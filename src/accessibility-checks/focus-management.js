@@ -1,3 +1,7 @@
+var log4js = require("log4js");
+var logger = log4js.getLogger();
+logger.level = "error";
+
 /**
  * @description Check elements focus management.
  * @param {page} page The page to be tested.
@@ -20,6 +24,13 @@ async function checkFocusManagement(page, components) {
     if (!hasFocus) {
       errors.push(`Focus not properly managed for element triggered by ${triggerSelector}`);
     }
+  }
+
+  if (errors.length > 0) {
+    logger.error('Focus management issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No focus management issues found');
   }
 
   return errors;

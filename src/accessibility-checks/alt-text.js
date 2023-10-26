@@ -1,3 +1,7 @@
+var log4js = require('log4js');
+var logger = log4js.getLogger();
+logger.level = 'error';
+
 /**
  * @description Check that alt text for images is exist.
  * @param {page} page - The page to be tested.
@@ -15,6 +19,13 @@ async function checkAltText(page) {
     const src = image.src;
 
     errors.push(`Image with missing alt text found: ${src}`);
+  }
+
+  if (errors.length > 0) {
+    logger.error('Image alt text issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No image alt text issues found');
   }
 
   return errors;

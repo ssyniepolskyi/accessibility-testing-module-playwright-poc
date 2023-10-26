@@ -26,16 +26,7 @@ test('Verify that keyboard-navigation worked correctly', async () => {
   ];
 
   // Call the checkKeyboardNavigation function to test keyboard navigation
-  const errors = await keyboardNavigation.checkKeyboardNavigation(page, components);
-
-  if (errors.length === 0) {
-    console.log('Keyboard navigation is working correctly.');
-  } else {
-    console.error('Keyboard navigation issues found:');
-    for (const error of errors) {
-      console.error(error);
-    }
-  }
+  await keyboardNavigation.checkKeyboardNavigation(page, components);
 
   await browser.close();
 });

@@ -1,4 +1,7 @@
 const {submitFormWithIncorrectData} = require('../utils/form-submission');
+var log4js = require("log4js");
+var logger = log4js.getLogger();
+logger.level = "error";
 
 /**
  * @description Check error-handling.
@@ -22,6 +25,13 @@ async function checkErrorHandling(page, inputSelector, submitFormSelector, incor
 
   if (!errorMessageElement) {
     errors.push(`Error message not displayed for input: ${inputSelector}`);
+  }
+
+  if (errors.length > 0) {
+    logger.error('Error handling issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No error handling issues found');
   }
 
   return errors;

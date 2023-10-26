@@ -10,14 +10,7 @@ test('Verify that aria-roles worked correctly', async () => {
   await page.goto(baseUrl);
 
   // Call the checkAriaRoles to test ARIA roles and attributes
-  const errors = await ariaRoles.checkAriaRoles(page);
-
-  if (errors.length > 0) {
-    console.log('Accessibility issues found:');
-    console.log(errors);
-  } else {
-    console.log('No accessibility issues found.');
-  }
+  await ariaRoles.checkAriaRoles(page);
 
   await browser.close();
 });

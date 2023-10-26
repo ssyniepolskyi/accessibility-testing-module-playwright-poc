@@ -1,3 +1,7 @@
+var log4js = require("log4js");
+var logger = log4js.getLogger();
+logger.level = "error";
+
 /**
  * @description Check skip to content links.
  * @param {page} page The page to be tested.
@@ -34,6 +38,12 @@ async function checkSkipToContentLinks(page, links) {
     }
   }
 
+  if (errors.length > 0) {
+    logger.error('Skip to content links issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No skip to content links issues found');
+  }
   return errors;
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "accessibility-testing-module-playwright-poc",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "This module empowers developers and quality assurance teams to automate accessibility testing during the end-to-end testing phase, ensuring that web applications are inclusive and usable by individuals with disabilities. Module provides a robust and flexible solution for creating accessible web applications.",
   "main": "src/accessibility-checks/index.js",
   "scripts": {
@@ -38,6 +38,6 @@
   },
   "homepage": "https://github.com/ssyniepolskyi/accessibility-testing-module-playwright-poc#readme",
   "devDependencies": {
-    "@playwright/test": "^1.39.0"
+    "@playwright/test": "1.17.2"
   }
 }

@@ -9,14 +9,7 @@ test('Verify that semantic-html worked correctly', async () => {
   await page.goto('http://localhost:3000/');
 
   // Call the checkPageTitles function to check semantic HTML check
-  const errors = await semanticHTML.checkSemanticHTML(page);
-
-  if (errors.length > 0) {
-    console.log('Semantic-html accessibility issues found:');
-    console.log(errors);
-  } else {
-    console.log('No semantic-html accessibility issues found.');
-  }
-
+  await semanticHTML.checkSemanticHTML(page);
+  
   await browser.close();
 });

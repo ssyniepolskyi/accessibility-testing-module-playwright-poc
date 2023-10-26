@@ -1,3 +1,7 @@
+var log4js = require("log4js");
+var logger = log4js.getLogger();
+logger.level = "error";
+
 /**
  * @description Check keyboard trap for elements.
  * @param {page} page The page to be tested.
@@ -36,6 +40,13 @@ async function checkKeyboardTraps(page, components) {
     if (!isOutOfTrap) {
       errors.push(`Keyboard trap failed to exit for ${closeSelector}`);
     }
+  }
+
+  if (errors.length > 0) {
+    logger.error('Keyboard trap issues found:');
+    logger.error(errors);
+  } else {
+    logger.info('No keyboard trap issues found');
   }
 
   return errors;
