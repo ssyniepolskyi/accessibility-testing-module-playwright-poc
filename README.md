@@ -32,3 +32,9 @@ To get started with the Accessibility Testing Module POC, follow these steps:
    ```bash
    npm install accessibility-testing-module-poc
    ```
+2. **Examples**:
+   Examples of using functions are in the directory `examples`:
+   To run the examples tests, use:
+   ```bash
+   npm run test
+   ```
