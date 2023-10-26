@@ -1,0 +1,43 @@
+{
+  "name": "accessibility-testing-module-playwright-poc",
+  "version": "0.0.1",
+  "description": "This module empowers developers and quality assurance teams to automate accessibility testing during the end-to-end testing phase, ensuring that web applications are inclusive and usable by individuals with disabilities. Module provides a robust and flexible solution for creating accessible web applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssyniepolskyi/accessibility-testing-module-playwright-poc.git"
+  },
+  "keywords": [
+    "Accessibility Testing",
+    "ARIA",
+    "Accessibility Compliance",
+    "WCAG (Web Content Accessibility Guidelines)",
+    "Color Contrast",
+    "Assistive Technology",
+    "Accessibility Rules",
+    "Semantic HTML",
+    "Automated Testing Framework",
+    "End-to-End Testing",
+    "Accessibility Guidelines",
+    "Accessibility Checker",
+    "Automated Accessibility Testing"
+  ],
+  "author": "Serafym Syniepolskyi",
+  "license": "MIT",
+  "dependencies": {
+    "@playwright/test": "1.17.2",
+    "axe-core": "4.2.2",
+    "html-validator": "6.0.1",
+    "log4js": "6.9.1"
+  },
+  "bugs": {
+    "url": "https://github.com/ssyniepolskyi/accessibility-testing-module-playwright-poc/issues"
+  },
+  "homepage": "https://github.com/ssyniepolskyi/accessibility-testing-module-playwright-poc#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.39.0"
+  }
+}
