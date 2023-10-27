@@ -4,6 +4,8 @@ node_modules
 /playwright-report/
 /playwright/.cache/
 dist/
+logs/
+logs
 .git/
 .github/
 .eslintrc
